@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        echo "Ejercicio numero 1";
+        echo "<b>Ejercicio numero 1</b>";
         echo '<br> <br>';
 
         echo "Para que una variable en PHP sea valida debe de seguir estas reglas <br>
@@ -38,6 +38,32 @@
         echo "$var7 No es una varaible valida, Aunque empieza por el signo de dolar pero tiene un * y en las variables no se permiten caracteres especiales";
         echo '<br>';
 
+        echo '<br>';
+        echo "<b>Ejercicio numero 2</b>";
+        echo '<br> <br>';
+        $a = 'ManejadorSQL';
+        $b = 'MySQL';
+        $c = &$a;
+        var_dump($a);
+        echo '<br>';
+        var_dump($b);
+        echo '<br>';
+        var_dump($c);
+        echo '<br>';
+
+        //nuevas asignaciones
+        $a = 'PHP server';
+        $b = &$a;
+        var_dump($a);
+        echo '<br>';
+        var_dump($b);
+        echo '<br>';
+        var_dump($c);
+        echo '<br>';
+        echo "En el segundo bloque de asignaciones se cambio el valor de a y ahora tenia PHP server, Dado que c es una referencia a a, c también reflejará este nuevo valor.
+        <br> y a b se le asigno como referencia a a por lo tanto a, b y c deberan de tomar el mismo valor que a y este es PHP server";
+    
+        
 ?>
 </body>
 </html>
