@@ -159,6 +159,15 @@
         // Liberar 
         unset($a, $b, $c, $d, $e, $f);
         echo '<br>';
+
+        echo '<br>';
+        echo "<b>Ejercicio numero 7</b>";
+        echo '<br> <br>';
+        echo "Versión: " . $_SERVER['SERVER_SOFTWARE'];
+        echo '<br>';
+        echo "Nombre servidor: " . PHP_OS;
+        echo '<br>';
+        echo "Idioma: " . $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 ?>
 </body>
 </html>
