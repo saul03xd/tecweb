@@ -62,7 +62,7 @@
         echo '<br>';
         var_dump($c);
         echo '<br>';
-        echo "En el segundo bloque de asignaciones se cambio el valor de a y ahora tenia PHP server, Dado que c es una referencia a a, c también reflejará este nuevo valor.
+        echo "En el segundo bloque de asignaciones se cambio el valor de a y ahora tiene PHP server, Dado que c es una referencia a a, c también reflejará este nuevo valor.
         <br> y a b se le asigno como referencia a a por lo tanto a, b y c deberan de tomar el mismo valor que a y este es PHP server";
         // Liberar
         unset($a, $b, $c);
@@ -73,22 +73,54 @@
         echo '<br> <br>';
         $a = "PHP5";
         echo "$a";
+        echo '<br>';
         $z[] = &$a;
         print_r($z) ;
         echo "<br>";
         $b = "5a version de PHP";
         echo "$b";
+        echo '<br>';
         $c = $b * 10;
         echo "$c";
+        echo '<br>';
         $a .= $b;
         echo "$a";
+        echo '<br>';
         $b *= $c;
         echo "$b";
+        echo '<br>';
         $z[0] = "MySQL";
         print_r($z) ;
         // Liberar
         unset($a, $b, $c, $z);
         echo '<br>';
+
+        echo '<br>';
+        echo "<b>Ejercicio numero 4</b>";
+        echo '<br> <br>';
+        $GLOBALS['a'] = "PHP5";
+        echo $GLOBALS['a'];
+        echo '<br>';
+        $GLOBALS['z'][] = &$GLOBALS['a'];
+        print_r($GLOBALS['z']);
+        echo "<br>";
+        $GLOBALS['b'] = "5a version de PHP";
+        echo $GLOBALS['b'];
+        echo '<br>';
+        $GLOBALS['c'] = $GLOBALS['b'] * 10;
+        echo $GLOBALS['c'];
+        echo '<br>';
+        $GLOBALS['a'] .= $GLOBALS['b'];
+        echo $GLOBALS['a'];
+        echo '<br>';
+        $GLOBALS['b'] *= $GLOBALS['c'];
+        echo $GLOBALS['b'];
+        echo '<br>';
+        $GLOBALS['z'][0] = "MySQL";
+        print_r($GLOBALS['z']);
+        // Liberar
+        unset($GLOBALS['a'], $GLOBALS['b'], $GLOBALS['c'], $GLOBALS['z']);
+        echo '<br>'
 ?>
 </body>
-</html>\
+</html>
