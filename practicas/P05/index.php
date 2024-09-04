@@ -138,6 +138,27 @@
         echo "$c";
         // Liberar
         unset($a, $b, $c);
+        echo '<br>';
+
+        echo '<br>';
+        echo "<b>Ejercicio numero 6</b>";
+        echo '<br> <br>';
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        var_dump($a, $b, $c, $d, $e, $f);
+        echo '<br>';
+        // Mostrar el valor booleano de $c y $e usando var_export
+        echo "Valor de \$c (con var_export): " . var_export($c, true) . "\n";
+        echo '<br>';
+        echo "Valor de \$e (con var_export): " . var_export($e, true) . "\n";
+        // Liberar 
+        unset($a, $b, $c, $d, $e, $f);
+        echo '<br>';
 ?>
 </body>
 </html>
