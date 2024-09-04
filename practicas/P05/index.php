@@ -120,7 +120,24 @@
         print_r($GLOBALS['z']);
         // Liberar
         unset($GLOBALS['a'], $GLOBALS['b'], $GLOBALS['c'], $GLOBALS['z']);
-        echo '<br>'
+        echo '<br>';
+
+        echo '<br>';
+        echo "<b>Ejercicio numero 5</b>";
+        echo '<br> <br>';
+        $a = "7 personas";
+        echo "$a";
+        echo '<br>';
+        $b = (integer) $a;
+        echo "$b";
+        echo '<br>';
+        $a = "9E3";
+        echo "$a";
+        echo '<br>';
+        $c = (double) $a;
+        echo "$c";
+        // Liberar
+        unset($a, $b, $c);
 ?>
 </body>
 </html>
