@@ -37,6 +37,8 @@
         $var7 = '$house*5';
         echo "$var7 No es una varaible valida, Aunque empieza por el signo de dolar pero tiene un * y en las variables no se permiten caracteres especiales";
         echo '<br>';
+        // Liberar
+        unset($var1, $var2, $var3, $var4, $var5, $var6, $var7);
 
         echo '<br>';
         echo "<b>Ejercicio numero 2</b>";
@@ -50,7 +52,7 @@
         echo '<br>';
         var_dump($c);
         echo '<br>';
-
+        
         //nuevas asignaciones
         $a = 'PHP server';
         $b = &$a;
@@ -62,8 +64,31 @@
         echo '<br>';
         echo "En el segundo bloque de asignaciones se cambio el valor de a y ahora tenia PHP server, Dado que c es una referencia a a, c también reflejará este nuevo valor.
         <br> y a b se le asigno como referencia a a por lo tanto a, b y c deberan de tomar el mismo valor que a y este es PHP server";
-    
+        // Liberar
+        unset($a, $b, $c);
+        echo '<br>';
         
+        echo '<br>';
+        echo "<b>Ejercicio numero 3</b>";
+        echo '<br> <br>';
+        $a = "PHP5";
+        echo "$a";
+        $z[] = &$a;
+        print_r($z) ;
+        echo "<br>";
+        $b = "5a version de PHP";
+        echo "$b";
+        $c = $b * 10;
+        echo "$c";
+        $a .= $b;
+        echo "$a";
+        $b *= $c;
+        echo "$b";
+        $z[0] = "MySQL";
+        print_r($z) ;
+        // Liberar
+        unset($a, $b, $c, $z);
+        echo '<br>';
 ?>
 </body>
-</html>
+</html>\
