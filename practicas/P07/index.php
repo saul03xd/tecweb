@@ -32,5 +32,21 @@
     <?php
         generarTablaLetras(3);
     ?>
+
+
+    <h2>Ejercicio 5 formulario</h2>
+    <form action="procesar.php" method="POST">
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" required /><br />
+
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo" required>
+            <option value="">Seleccione su sexo</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+        </select><br />
+
+        <input type="submit" value="Enviar" />
+    </form>
 </body>
 </html>
