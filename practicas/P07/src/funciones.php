@@ -35,4 +35,32 @@ function generarMatriz($filas) {
 
 }
 
+function buscarMultiplo($valor){
+    if (!empty($valor)){
+        $multiploEncontrado = false;
+
+        while(!$multiploEncontrado){
+            $randomNum = rand(1, 1000);
+            if($randomNum % $valor == 0){
+                echo "El número aleatorio $randomNum es múltiplo de $valor".'<br>';
+                $multiploEncontrado = true;
+            }
+        }
+    }
+}
+
+function obtenerMultiplo($valor){
+    if (!empty($valor)){
+        $multiploEncontrado = false;
+        do {
+            $randomNum = rand(1, 1000);
+            if($randomNum % $valor == 0){
+                echo 'Resultado usando do-while <br>';
+                echo "El número aleatorio $randomNum es múltiplo de $valor";
+                $multiploEncontrado = true;
+            }
+        } while (!$multiploEncontrado);
+    }
+}
+
 ?>
