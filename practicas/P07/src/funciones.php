@@ -63,4 +63,21 @@ function obtenerMultiplo($valor){
     }
 }
 
+function generarTablaLetras(){
+    $letras = array();
+    for ($codigoAscii = 97; $codigoAscii <= 122; $codigoAscii++){
+        $letras[$codigoAscii] = chr($codigoAscii);
+    }
+    echo "<table border='1'>"; // Inicia la tabla
+
+    foreach ($letras as $indice => $letra) {
+        echo "<tr>"; // Abre una fila
+        echo "<td>$indice</td>"; // Imprime el código ASCII
+        echo "<td>$letra</td>"; // Imprime la letra correspondiente
+        echo "</tr>"; // Cierra la fila
+    }
+
+    echo "</table>"; // Cierra la tabla
+}
+
 ?>
