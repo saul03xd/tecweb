@@ -9,4 +9,30 @@ function esMultiploDe5Y7($numero) {
     }
 }
 
+function generarMatriz($filas) {
+    $matriz = [];
+    $iteraciones = 0;
+
+    while (count($matriz) < $filas) {
+        $num1 = rand(1, 1000); //Genera números aleatorios
+        $num2 = rand(1, 1000);
+        $num3 = rand(1, 1000);
+        $iteraciones++;
+
+        if (($num1 % 2 != 0) && ($num2 % 2 == 0) && ($num3 % 2 != 0)) {
+            $matriz[] = [$num1, $num2, $num3];
+        }
+    }
+
+    echo "Matriz generada:\n";
+    echo '<br>';
+    foreach ($matriz as $fila) {
+        echo implode(', ', $fila) . "\n";
+        echo '<br>';
+    }
+    $totalNumeros = $iteraciones*3;
+    echo "$totalNumeros\n números obtenidos en $iteraciones\n iteraciones";
+
+}
+
 ?>
