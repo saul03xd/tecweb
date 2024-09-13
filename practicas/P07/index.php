@@ -26,5 +26,11 @@
         buscarMultiplo($_GET['numero']);
         obtenerMultiplo($_GET['numero']);
     ?>
+
+    <h2>Ejercicio 4</h2>
+    <p>Arreglo cuyos valores son valores de la 'a' a la 'z'<p>
+    <?php
+        generarTablaLetras(3);
+    ?>
 </body>
 </html>
