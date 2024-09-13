@@ -12,5 +12,11 @@
         include 'src/funciones.php';
         esMultiploDe5Y7($_GET['numero']);
     ?>
+
+    <h2>Ejercicio 2</h2>
+    <p>Secuencia de números aleatorios<p>
+    <?php
+        generarMatriz(3);
+    ?>
 </body>
 </html>
