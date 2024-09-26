@@ -25,12 +25,13 @@
             die('Falló la conexión: ' . $link->connect_error);
         }
 
-        // Consultar productos con unidades <= tope
-        if ($result = $link->query("SELECT * FROM productos WHERE unidades <= $tope")) {
+        // Consultar productos con unidades <= tope y que no estén eliminados (eliminado = 0)
+        $query = "SELECT * FROM productos WHERE unidades <= $tope AND eliminado = 0";
+        if ($result = $link->query($query)) {
             if ($result->num_rows > 0) {
                 // Generar tabla con resultados
                 echo '<table class="table table-striped">';
-                echo '<thead><tr><th>#</th><th>Nombre</th><th>Marca</th><th>Modelo</th><th>Precio</th><th>Unidades</th><th>Detalles</th><th>Estado</th><th>Imagen</th></tr></thead>';
+                echo '<thead><tr><th>#</th><th>Nombre</th><th>Marca</th><th>Modelo</th><th>Precio</th><th>Unidades</th><th>Detalles</th><th>Imagen</th></tr></thead>';
                 echo '<tbody>';
 
                 while ($row = $result->fetch_assoc()) {
@@ -42,11 +43,6 @@
                     echo '<td>' . $row['precio'] . '</td>';
                     echo '<td>' . $row['unidades'] . '</td>';
                     echo '<td>' . utf8_encode($row['detalles']) . '</td>';
-                    
-                    // Mostrar el estado del producto
-                    $estado = ($row['eliminado'] == 1) ? 'Eliminado' : 'Disponible';
-                    echo '<td>' . $estado . '</td>';
-
                     // Mostrar la imagen almacenada en la base de datos
                     echo '<td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="100" /></td>';
                     echo '</tr>';
