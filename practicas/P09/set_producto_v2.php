@@ -28,8 +28,8 @@ function productoExiste($conexion, $nombre, $marca, $modelo) {
 // Función para insertar un nuevo producto
 function insertarProducto($conexion, $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen) {
     // Ajustar el uso de los nombres de las columnas en la query INSERT INTO
-    $consulta = $conexion->prepare("INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, 0)");
+    $consulta = $conexion->prepare("INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?)");
     $consulta->bind_param('sssdsis', $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
     $exito = $consulta->execute();
     $id_insertado = $consulta->insert_id;
