@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Product App</title>
+  </head>
+  <body onload="init()">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+      <a href="#">Product App</a>
+      <form onsubmit="buscarProducto(event)">
+        <input name="search" id="search" type="search" placeholder="Buscar por ID, nombre, marca o detalles" required>
+        <button type="submit">Buscar</button>
+      </form>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+      <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
+      <form id="task-form" onsubmit="agregarProducto(event)">
+        <div>
+          <label for="name"></label>
+          <input type="text" id="name" placeholder="Nombre de producto" required>
+        </div>
+        <div>
+          <label for="description"></label>
+          <textarea id="description" cols="30" rows="5" placeholder="JSON de producto" required></textarea>
+        </div>
+        <button type="submit">Agregar Producto</button>
+      </form>
+
+      <!-- TABLA DE PRODUCTOS -->
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody id="productos">
+          <!-- Se llenará con los datos de productos -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Lógica del Frontend -->
+    <script src="app.js"></script>
+  </body>
+</html>
