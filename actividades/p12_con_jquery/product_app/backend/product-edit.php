@@ -28,7 +28,7 @@ if ($inputData) {
 
         if ($conexion->query($sql)) {
             $response['status'] = 'success';
-            $response['message'] = 'Producto actualizado con éxito';
+            $response['message'] = 'Producto actualizado exitosamente';
         } else {
             $response['message'] = "Error al ejecutar la consulta: " . $conexion->error;
         }
@@ -40,6 +40,7 @@ if ($inputData) {
 } else {
     $response['message'] = 'No se recibió información de producto para actualizar';
 }
+
 
 echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
