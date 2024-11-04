@@ -3,7 +3,70 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Registro de productos</title> 
+    <title>Registro de productos</title>
+    <script>
+        function validarFormulario(event) {
+            // Nombre: requerido y hasta 100 caracteres
+            const nombre = document.getElementById('nombre').value;
+            if (nombre === "" || nombre.length > 100) {
+                alert("El nombre es requerido y debe tener 100 caracteres o menos.");
+                event.preventDefault();
+                return;
+            }
+
+            // Marca: requerida y seleccionada de una lista
+            const marca = document.getElementById('marca').value;
+            if (marca === "") {
+                alert("La marca es requerida y debe seleccionarse de la lista.");
+                event.preventDefault();
+                return;
+            }
+
+            // Modelo: requerido, alfanumérico y hasta 25 caracteres
+            const modelo = document.getElementById('modelo').value;
+            const alfanumericoRegex = /^[a-zA-Z0-9]+$/;
+            if (modelo === "" || !alfanumericoRegex.test(modelo) || modelo.length > 25) {
+                alert("El modelo es requerido, debe ser alfanumérico y tener 25 caracteres o menos.");
+                event.preventDefault();
+                return;
+            }
+
+            // Precio: requerido y mayor a 99.99
+            const precio = parseFloat(document.getElementById('precio').value);
+            if (isNaN(precio) || precio <= 99.99) {
+                alert("El precio es requerido y debe ser mayor a 99.99.");
+                event.preventDefault();
+                return;
+            }
+
+            // Detalles: opcional, hasta 250 caracteres
+            const detalles = document.getElementById('detalles').value;
+            if (detalles !== "" && detalles.length > 250) {
+                alert("Los detalles deben tener 250 caracteres o menos.");
+                event.preventDefault();
+                return;
+            }
+
+            // Unidades: requerido y mayor o igual a 0
+            const unidades = parseInt(document.getElementById('unidades').value);
+            if (isNaN(unidades) || unidades < 0) {
+                alert("Las unidades son requeridas y deben ser mayor o igual a 0.");
+                event.preventDefault();
+                return;
+            }
+
+            // Imagen: opcional, pero si no se registra, se asigna una ruta predeterminada
+            const imagen = document.getElementById('imagen').value;
+            if (imagen === "") {
+                alert("No se seleccionó imagen, se usará una imagen predeterminada.");
+                document.getElementById('imagen').value = "ruta_predeterminada.jpg";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("formularioProductos").addEventListener("submit", validarFormulario);
+        });
+    </script>
 </head>
 
 <body>
@@ -15,12 +78,20 @@
             <legend>Información del Producto</legend>
             <ul>
                 <li><label for="nombre">Nombre:</label> <input type="text" name="nombre" id="nombre" required></li>
-                <li><label for="marca">Marca:</label> <input type="text" name="marca" id="marca" required></li>
+                <li><label for="marca">Marca:</label> 
+                    <select name="marca" id="marca" required>
+                        <option value="">Selecciona una marca</option>
+                        <option value="Sony">Sony</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                    </select>
+                </li>
                 <li><label for="modelo">Modelo:</label> <input type="text" name="modelo" id="modelo" required></li>
                 <li><label for="precio">Precio:</label> <input type="number" step="0.01" name="precio" id="precio" required></li>
-                <li><label for="detalles">Detalles:</label> <textarea name="detalles" id="detalles" rows="4" placeholder="Descripción del producto" required></textarea></li>
+                <li><label for="detalles">Detalles:</label> <textarea name="detalles" id="detalles" rows="4" placeholder="Descripción del producto"></textarea></li>
                 <li><label for="unidades">Unidades:</label><input type="number" name="unidades" id="unidades" min="1" required></li>
-                <li><label for="imagen">Imagen:</label> <input type="file" name="imagen" id="imagen" accept="image/*" required></li>
+                <li><label for="imagen">Imagen:</label> <input type="file" name="imagen" id="imagen" accept="image/*"></li>
             </ul>
         </fieldset>
 

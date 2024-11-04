@@ -23,7 +23,7 @@ $unidades = intval($_POST['unidades']); // Asegurarse de que es un entero
 $eliminado = 0; // Valor fijo
 
 // Ruta por defecto si no se sube una imagen
-$defaultImagePath = 'http://localhost/tecweb/practicas/p09/img/img.png';
+$defaultImagePath = 'http://localhost/tecweb/practicas/P10/img/img.png';
 
 // Verificar si se ha subido una imagen
 if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
@@ -32,7 +32,7 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
     $tmpImagen = $_FILES['imagen']['tmp_name'];
     
     // Mover la imagen a un directorio en el servidor
-    $uploadDir = '../p09/img/'; // Carpeta donde se almacenarán las imágenes
+    $uploadDir = '../P10/img/'; // Carpeta donde se almacenarán las imágenes
     $rutaImagen = $uploadDir . basename($nombreImagen);
 
     // Intentar mover el archivo subido al directorio de destino

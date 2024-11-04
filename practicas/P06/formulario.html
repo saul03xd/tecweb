@@ -18,7 +18,7 @@
     Justifica el por qué tus tenis se <em>tienen que</em> ir y tú puedes ser uno de los diez afortunados ganadores.</p>
 
     <!-- Modificación para enviar el formulario -->
-    <form action="http://52.43.117.247/neo/classroom/tw/concurso.php" method="POST">
+    <form action="" method="POST">
       
       <!-- Sección de Información del Participante -->
       <fieldset>
@@ -76,6 +76,21 @@
             <option value="11">11</option>
           </select>
         </fieldset>
+        
+        <div id="color-container">
+          <input type="color" name="color[]">
+        </div>
+        <button type="button" onclick="addColor()">Agregar otro color</button>
+        
+        <script>
+          function addColor() {
+            var colorContainer = document.getElementById('color-container');
+            var newColorInput = document.createElement('input');
+            newColorInput.type = 'color';
+            newColorInput.name = 'color[]';
+            colorContainer.appendChild(newColorInput);
+          }
+        </script>
         
         
 
