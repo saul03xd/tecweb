@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CatalogoVOD>
+    <cuenta>
+        <correo>saul.tl0307@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>SIET</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+            <perfil>
+                <usuario>ISAUL</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre> Acción </nombre>
+                <titulo>
+                    <nombre> Venom </nombre>
+                    <duracion>1 hora 52 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Code 8 - Renegados</nombre>
+                    <duracion>1 hora 38 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Un espia y medio</nombre>
+                    <duracion>1 horas 47 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Atlas</nombre>
+                    <duracion>2 horas 0 minutos</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre> Terror </nombre>
+                <titulo>
+                    <nombre>Halloween</nombre>
+                    <duracion>1 hora 45 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Ruega por nosotros</nombre>
+                    <duracion>1 hora 39 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>OUIJA el origen</nombre>
+                    <duracion>1 hora 38 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>No respires 2</nombre>
+                    <duracion>1 hora 39 minutos</duracion>
+                </titulo>
+            </genero>           
+            
+            
+            
+        </peliculas>
+        
+        <programas>
+            <genero>
+                <nombre> Acción </nombre>
+                <titulo>
+                    <nombre>Arcane</nombre>
+                    <duracion>2 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Witcher</nombre>
+                    <duracion>3 temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The umbrella Academy</nombre>
+                    <duracion>4 temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>V wars</nombre>
+                    <duracion>1 temporada</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre> Animes </nombre>
+                <titulo>
+                    <nombre>Dr Stone</nombre>
+                    <duracion>2 temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Kuroko no basket</nombre>
+                    <duracion>3 temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Black clover</nombre>
+                    <duracion>4 temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>My hero academy</nombre>
+                    <duracion>5 temporadas</duracion>
+                </titulo>
+            </genero>
+            
+        </programas>
+    </contenido>
+    
+</CatalogoVOD>

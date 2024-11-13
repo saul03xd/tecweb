@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CatalogoVOD>
+    <cuenta correo="saul.tl0307@gmail.com">
+        <perfiles>
+            <perfil usuario="SIET" idioma="Español"/>
+            <perfil usuario='ISAUL' idioma='Español'/>
+        </perfiles>
+    </cuenta>
+    
+    <contenido>
+        <peliculas>
+            <genero Nombre="Acción">
+                <titulo nombre="Venom" duracion="1 hora 52 minutos"/>
+                <titulo nombre="Code 8 - Renegados" duracion="1 hora 38 minutos"/>
+                <titulo nombre="Un espia y medio" duracion="1 horas 47 minutos"/>
+                <titulo nombre="Atlas" duracion="2 horas 0 minutos"/>
+            </genero>
+            <genero Nombre="Terror">
+                <titulo nombre="Halloween" duracion="1 hora 45 minutos"/>
+                <titulo nombre="Ruega por nosotros" duracion="1 hora 39 minutos"/>
+                <titulo nombre="OUIJA el origen" duracion="1 hora 38 minutos"/>
+                <titulo nombre="No respires 2" duracion="1 hora 39 minutos"/>
+            </genero>  
+        </peliculas>
+        
+        <programas>
+            <genero Nombre="Acción">
+                <titulo nombre="Arcane" duracion="2 temporadas"/>
+                <titulo nombre="The Witcher" duracion="3 temporadas"/>
+                <titulo nombre="The umbrella Academy" duracion="4 temporadas"/>
+                <titulo nombre="V wars" duracion="1 temporada"/>
+            </genero>
+            <genero Nombre="Animes">
+                <titulo nombre="Dr Stone" duracion="2 temporadas"/>
+                <titulo nombre="Kuroko no basket" duracion="3 temporadas"/>
+                <titulo nombre="Black clover" duracion="4 temporadas"/>
+                <titulo nombre="My hero academy" duracion="5 temporadas"/>
+            </genero> 
+        </programas>
+    </contenido>
+    
+</CatalogoVOD>
