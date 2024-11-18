@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/database.php';
+/*require_once __DIR__ . '/database.php';
 
 // Respuesta inicial de error
 $response = [
@@ -59,4 +59,12 @@ if ($inputData) {
 
 // Convertir la respuesta en JSON
 echo json_encode($response, JSON_PRETTY_PRINT);
+?> */
+namespace backend\myapi;
+require_once __DIR__ . '/myapi/Products.php';
+
+$product = new Products();
+$product->add($_POST);
+echo $product->getData();
+
 ?>

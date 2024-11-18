@@ -70,35 +70,40 @@ $(document).ready(function() {
     $('#unidades').blur(validateUnidades);
     
     function validateName() {
-        let name = $('#name').val();
-        
-        // Si estamos en modo edición, no verificamos si el nombre ya existe
-        if (edit) {
-            console.log('Modo edición: se ignora la validación de nombre.');
-            return true; // Permitir el nombre actual
-        }
-        
-        if (name === '' || name.length > 100) {
-            $('#container').text('Nombre es requerido y debe tener 100 caracteres o menos.');
-            $('#product-result').show();
-            return false;
-        }
-    
-        console.log('Validando nombre:', name);
-        // Validación asincrónica de nombre único
-        $.get('backend/product-name.php', { name }, function(response) {
-            const data = JSON.parse(response);
-            console.log('Respuesta de validación de nombre:', data);
-            if (data.exists) {
-                $('#container').text('Nombre ya existe. Elige otro nombre.');
-                $('#product-result').show();
-                return false;
+        return new Promise((resolve) => {
+            let name = $('#name').val();
+            
+            // Si estamos en modo edición, no verificamos si el nombre ya existe
+            if (edit) {
+                console.log('Modo edición: se ignora la validación de nombre.');
+                resolve(true); // Permitir el nombre actual
+                return;
             }
+            
+            if (name === '' || name.length > 100) {
+                $('#container').text('Nombre es requerido y debe tener 100 caracteres o menos.');
+                $('#product-result').show();
+                resolve(false);
+                return;
+            }
+        
+            console.log('Validando nombre:', name);
+            // Validación asincrónica de nombre único
+            $.get('backend/product-name.php', { name }, function(response) {
+                const data = JSON.parse(response);
+                console.log('Respuesta de validación de nombre:', data);
+                if (data.exists) {
+                    $('#container').text('Nombre ya existe. Elige otro nombre.');
+                    $('#product-result').show();
+                    resolve(false);
+                } else {
+                    resolve(true);
+                }
+            }).fail(() => {
+                resolve(false);
+            });
         });
-        return true;
     }
-    
-    
 
     function validateMarca() {
         if ($('#marca').val() === '') {
