@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+/*header('Content-Type: application/json');
 include_once __DIR__.'/database.php';
 
 $name = mysqli_real_escape_string($conn, $_GET['name']);
@@ -16,5 +16,12 @@ if ($id) {
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
 
-echo json_encode(['exists' => $data['count'] > 0]);
+echo json_encode(['exists' => $data['count'] > 0]); */
+
+namespace backend\myapi;
+require_once __DIR__ . '/myapi/Products.php';
+
+$product = new Products();
+$product->singleByName($_POST['name']);
+echo $product->getData();
 ?>
